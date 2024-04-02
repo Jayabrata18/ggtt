@@ -152,8 +152,9 @@ function App() {
     axios
       .post("http://localhost:5000/calculate", selectedProducts)
       .then((response) => {
-        if (response.data.packages) {
-          setPackages(response.data.packages);
+        console.log("Response from server:", response.data);
+        if (response.data) {
+          setPackages(response.data);
         } else {
           setPackages([]);
         }
